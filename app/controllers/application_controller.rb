@@ -29,12 +29,16 @@ class ApplicationController < Sinatra::Base
             pets.to_json
             
           end  
-          
+
           get "/pets/:breeds" do
             pets = Pet.find_by(params[:breeds]) 
             pets.to_json
           
-            
           end
-    
+          
+           get "/pets/:name" do
+            pets = Pet.find_by(params[:name]) 
+            pets.to_json
+          
+          end
 end
