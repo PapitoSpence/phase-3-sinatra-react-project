@@ -41,4 +41,14 @@ class ApplicationController < Sinatra::Base
             pets.to_json
           
           end
+
+                    patch "/pets/:id" do
+            pet = Pet.find_params(params[:id]0)
+            pets.update(
+                name: params[:name], description: params[:description], breeds: params[:breeds],
+            photos: params[:photos], status: params[:status], contact: params[:contact]
+
+            )
+            pets.to_json
+          end
 end
