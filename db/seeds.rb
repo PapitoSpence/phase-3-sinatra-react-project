@@ -2,6 +2,7 @@ puts "🌱 Seeding spices..."
 
 # Seed your database here
 # Seed your database here.times do
+20.times do
   user = User.create(
     name: Faker::Name.name,
     email: Faker::Internet.email,
@@ -15,7 +16,7 @@ end
       description: Faker::Lorem.sentence,
       breed: Faker::Creature::Animal.name,
       image: Faker::LoremFlickr.image,
-      status: ["Adopted", "NotAdopted"].sample
+      status: ["Adopted", "NotAdopted"].sample,
       user_id: rand(1..20)
   )
 end
