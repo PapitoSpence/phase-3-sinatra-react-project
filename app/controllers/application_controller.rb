@@ -18,5 +18,11 @@ class ApplicationController < Sinatra::Base
             )
             user.to_json
           end
+   post "/new_pet" do
+          pet = Pet.create(
+            name: params[:name], description: params[:description], breeds: params[:breeds],
+            photos: params[:photos], status: params[:status], contact: params[:contact]
+          )
+        end       
     
 end
