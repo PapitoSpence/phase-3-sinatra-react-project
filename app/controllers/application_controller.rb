@@ -51,4 +51,11 @@ class ApplicationController < Sinatra::Base
             )
             pets.to_json
           end
+
+                    delete "/pets/:id" do
+            pets = Pet.find(params[:id])
+            pets.destroy
+            pets.to_json
+            
+          end
 end
