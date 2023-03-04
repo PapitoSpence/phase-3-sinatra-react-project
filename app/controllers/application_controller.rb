@@ -11,4 +11,12 @@ class ApplicationController < Sinatra::Base
       users.to_json
     end
 
+    post '/login' do 
+            user = User.find_by(
+              email: params[:email],
+              password: params[:password]
+            )
+            user.to_json
+          end
+    
 end
