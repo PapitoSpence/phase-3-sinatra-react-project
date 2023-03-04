@@ -23,6 +23,11 @@ class ApplicationController < Sinatra::Base
             name: params[:name], description: params[:description], breeds: params[:breeds],
             photos: params[:photos], status: params[:status], contact: params[:contact]
           )
-        end       
+        end     
+        get "/pets/:status" do
+            pets = Pet.find_by(params[:status]) 
+            pets.to_json
+            
+          end  
     
 end
