@@ -2,7 +2,7 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
   # Add your routes here
-      get "/" do
+      get "/pets" do
         pet = Pet.all
         pet.to_json
       end
@@ -46,12 +46,11 @@ class ApplicationController < Sinatra::Base
           end
 
           patch "/pets/:id" do
-            pet = Pet.find_params(params[:id]0)
+            pets = Pet.find_params(params[:id])
             pets.update(
                 name: params[:name], description: params[:description], breeds: params[:breeds],
-            photos: params[:photos], status: params[:status], contact: params[:contact]
-            https://www.google.com/search?q=TMH001_TMH_Logo_CMYK.png&oq=TMH001_TMH_Logo_CMYK.png&aqs=chrome..69i57.514j0j9&sourceid=chrome&ie=UTF-8
-            )
+            photos: params[:photos], status: params[:status], contact: params[:contact])
+            
             pets.to_json
           end
 
